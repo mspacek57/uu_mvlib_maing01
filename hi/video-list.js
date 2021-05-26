@@ -77,7 +77,7 @@ export const VideoList = createVisualComponent({
                         {
                 cell: cellProps => {
                     return (
-                        <div className={"right"}>
+                        <div className={"left"}>
                             <UU5.Bricks.Button
                                 content={<UU5.Bricks.Icon icon={"mdi-book-open"}/>}
                                 onClick={() => showVideo(cellProps.data.data.id)}
@@ -150,7 +150,7 @@ export const VideoList = createVisualComponent({
                     />
                 </UU5.Bricks.Modal>
                 <UU5.Bricks.Header content={<UU5.Bricks.Lsi lsi={{en: "Video List", cs: "Seznam videoklipů"}}/>} level={3}/>
-                <div className={"right"}>
+                <div className={"left"}>
                     <UU5.Bricks.Button
                         content={<UU5.Bricks.Lsi lsi={{en: "Add a Video", cs: "Přidat videoklip"}}/>}
                         colorSchema={"green"}

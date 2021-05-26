@@ -58,7 +58,7 @@ export const GenreList = createVisualComponent({
                         {
                 cell: cellProps => {
                     return (
-                        <div className={"right"}>
+                        <div className={"left"}>
                             <UU5.Bricks.Button
                                 content={<UU5.Bricks.Icon icon={"mdi-pencil"}/>}
                                 colorSchema={"blue"}
@@ -122,7 +122,7 @@ export const GenreList = createVisualComponent({
                     />
                 </UU5.Bricks.Modal>
                 <UU5.Bricks.Header content={<UU5.Bricks.Lsi lsi={{en: "Genre List", cs: "Seznam žánrů"}}/>} level={3}/>
-                <div className={"right"}>
+                <div className={"left"}>
                     <UU5.Bricks.Button
                         content={<UU5.Bricks.Lsi lsi={{en: "Create a Genre", cs: "Vytvořit žánr"}}/>}
                         colorSchema={"green"}

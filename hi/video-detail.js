@@ -68,6 +68,9 @@ export const VideoDetail = createVisualComponent({
             return (
                 <div {...attrs}>
                     <UU5.Bricks.YoutubeVideo src={videoInfo.link} />
+                    <div>
+                    <UU5.Forms.TextArea label='Comment' placeholder='Insert text here.' size="xl"/>
+                    </div>
                     <UU5.Bricks.Container header={videoInfo.artist + " - " + videoInfo.title}>
                         <UU5.Bricks.Row>
                             {"Album: " + videoInfo.album}

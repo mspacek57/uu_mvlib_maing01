@@ -58,7 +58,7 @@ export const UserList = createVisualComponent({
                         {
                 cell: cellProps => {
                     return (
-                        <div className={"right"}>
+                        <div className={"left"}>
                             <UU5.Bricks.Button
                                 content={<UU5.Bricks.Icon icon={"mdi-pencil"}/>}
                                 colorSchema={"blue"}
@@ -122,7 +122,7 @@ export const UserList = createVisualComponent({
                     />
                 </UU5.Bricks.Modal>
                 <UU5.Bricks.Header content={<UU5.Bricks.Lsi lsi={{en: "User List", cs: "Seznam uživatelů"}}/>} level={3}/>
-                <div className={"right"}>
+                <div className={"left"}>
                     <UU5.Bricks.Button
                         content={<UU5.Bricks.Lsi lsi={{en: "Register", cs: "Registrovat se"}}/>}
                         colorSchema={"green"}
