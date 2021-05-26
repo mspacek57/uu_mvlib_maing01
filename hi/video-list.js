@@ -2,7 +2,7 @@
 import React from "react";
 import UU5 from "uu5g04";
 import "uu5g04-bricks";
-import {createVisualComponent, useDataList, useState} from "uu5g04-hooks";
+import { createVisualComponent, useDataList, useState } from "uu5g04-hooks";
 import Uu5Tiles from "uu5tilesg02";
 import VideoUpdateForm from "videoUpdateForm";
 import Calls from "calls";
@@ -38,20 +38,26 @@ export const VideoList = createVisualComponent({
                 update: Calls.updateVideo,
                 delete: Calls.deleteVideo
             },
-            initialDtoIn: {data: {}}
+            initialDtoIn: { data: {} }
         });
-
         const genreListResult = useDataList({
             handlerMap: {
                 load: Calls.listGenre,
             },
-            initialDtoIn: {data: {}}
+            initialDtoIn: { data: {} }
         });
+
+        let genreList = [];
+        genreListResult.data && genreListResult.data.forEach(genre => {
+            genreList.push(genre.data)
+        })
+
+
 
         const [selectedVideoData, setSelectedVideoData] = useState(null)
 
         const columns = [
-                        {
+            {
                 cell: cellProps => {
                     return cellProps.data.data.id
                 },
@@ -60,40 +66,43 @@ export const VideoList = createVisualComponent({
             },
             {
                 cell: cellProps => cellProps.data.data.title,
-                header: <UU5.Bricks.Lsi lsi={{en: "Title", cs: "Skladba"}}/>
+                header: <UU5.Bricks.Lsi lsi={{ en: "Title", cs: "Skladba" }} />
             },
             {
                 cell: cellProps => cellProps.data.data.artist,
-                header: <UU5.Bricks.Lsi lsi={{en: "Artist", cs: "Interpret"}}/>
+                header: <UU5.Bricks.Lsi lsi={{ en: "Artist", cs: "Interpret" }} />
             },
             {
                 cell: cellProps => cellProps.data.data.album,
-                header: <UU5.Bricks.Lsi lsi={{en: "Album", cs: "Album"}}/>
+                header: <UU5.Bricks.Lsi lsi={{ en: "Album", cs: "Album" }} />
             },
             {
-                cell: cellProps => cellProps.data.data.genre,
-                header: <UU5.Bricks.Lsi lsi={{en: "Genre", cs: "Žánr"}}/>
+                cell: cellProps => {
+                    let genre = genreList.find(item => item.id == cellProps.data.data.genre);
+                    if (genre) { return genre.name } else return ""
+                },
+                header: <UU5.Bricks.Lsi lsi={{ en: "Genre", cs: "Žánr" }} />
             },
-                        {
+            {
                 cell: cellProps => {
                     return (
                         <div className={"left"}>
                             <UU5.Bricks.Button
-                                content={<UU5.Bricks.Icon icon={"mdi-book-open"}/>}
+                                content={<UU5.Bricks.Icon icon={"mdi-book-open"} />}
                                 onClick={() => showVideo(cellProps.data.data.id)}
                                 bgStyle={"transparent"}
                             />
                             <UU5.Bricks.Button
-                                content={<UU5.Bricks.Icon icon={"mdi-pencil"}/>}
+                                content={<UU5.Bricks.Icon icon={"mdi-pencil"} />}
                                 colorSchema={"blue"}
                                 bgStyle={"transparent"}
                                 onClick={() => setSelectedVideoData(cellProps.data)}
                             />
                             <UU5.Bricks.Button
-                                content={<UU5.Bricks.Icon icon={"mdi-delete"}/>}
+                                content={<UU5.Bricks.Icon icon={"mdi-delete"} />}
                                 colorSchema={"red"}
                                 bgStyle={"transparent"}
-                                onClick={() => cellProps.data.handlerMap.delete({data: {id: cellProps.data.data.id}})}
+                                onClick={() => cellProps.data.handlerMap.delete({ data: { id: cellProps.data.data.id } })}
                             />
                         </div>
                     )
@@ -107,7 +116,7 @@ export const VideoList = createVisualComponent({
             switch (dataListResult.state) {
                 case "pendingNoData":
                 case "pending":
-                    child = <UU5.Bricks.Loading/>
+                    child = <UU5.Bricks.Loading />
                     break;
                 case "readyNoData":
                 case "ready":
@@ -130,7 +139,7 @@ export const VideoList = createVisualComponent({
         }
 
         function showVideo(id) {
-            UU5.Environment.getRouter().setRoute("videoDetail", {id: id})
+            UU5.Environment.getRouter().setRoute("videoDetail", { id: id })
         }
 
         //@@viewOff:private
@@ -152,9 +161,9 @@ export const VideoList = createVisualComponent({
                 <UU5.Bricks.Header content={<UU5.Bricks.Lsi lsi={{en: "Video List", cs: "Seznam videoklipů"}}/>} level={3}/>
                 <div className={"left"}>
                     <UU5.Bricks.Button
-                        content={<UU5.Bricks.Lsi lsi={{en: "Add a Video", cs: "Přidat videoklip"}}/>}
+                        content={<UU5.Bricks.Lsi lsi={{ en: "Add a Video", cs: "Přidat videoklip" }} />}
                         colorSchema={"green"}
-                        onClick={() => setSelectedVideoData({data: {}})}
+                        onClick={() => setSelectedVideoData({ data: {} })}
                     />
                 </div>
                 {getChild()}

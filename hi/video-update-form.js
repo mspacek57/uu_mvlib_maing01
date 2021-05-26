@@ -126,7 +126,7 @@ export const VideoUpdateForm = createVisualComponent({
                         value={selectedVideoData && selectedVideoData.description}
                     />
                     <UU5.Forms.Select
-                        name="genreList"
+                        name="genre"
                         label={<UU5.Bricks.Lsi lsi={{en: "Genre", cs: "Žánr"}}/>}
                         value={selectedVideoData && selectedVideoData.genre}
                     >
