@@ -124,7 +124,7 @@ export const UserList = createVisualComponent({
                 <UU5.Bricks.Header content={<UU5.Bricks.Lsi lsi={{en: "User List", cs: "Seznam uživatelů"}}/>} level={3}/>
                 <div className={"right"}>
                     <UU5.Bricks.Button
-                        content={<UU5.Bricks.Lsi lsi={{en: "Create a User", cs: "Vytvořit uživatele"}}/>}
+                        content={<UU5.Bricks.Lsi lsi={{en: "Register", cs: "Registrovat se"}}/>}
                         colorSchema={"green"}
                         onClick={() => setSelectedUserData({data: {}})}
                     />
