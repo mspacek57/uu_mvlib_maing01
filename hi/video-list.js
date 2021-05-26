@@ -79,6 +79,11 @@ export const VideoList = createVisualComponent({
                     return (
                         <div className={"right"}>
                             <UU5.Bricks.Button
+                                content={<UU5.Bricks.Icon icon={"mdi-book-open"}/>}
+                                onClick={() => showVideo(cellProps.data.data.id)}
+                                bgStyle={"transparent"}
+                            />
+                            <UU5.Bricks.Button
                                 content={<UU5.Bricks.Icon icon={"mdi-pencil"}/>}
                                 colorSchema={"blue"}
                                 bgStyle={"transparent"}
@@ -122,6 +127,10 @@ export const VideoList = createVisualComponent({
                     break;
             }
             return child;
+        }
+
+        function showVideo(id) {
+            UU5.Environment.getRouter().setRoute("video", {id: id})
         }
 
         //@@viewOff:private

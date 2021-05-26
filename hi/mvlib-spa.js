@@ -134,7 +134,7 @@ export const MVLibrarySpa = createVisualComponent({
                 <UU5.Common.Router
                     basePath={""}
                     routes={{
-                        "": {component: <div>home</div>},
+                        "": {component: <VideoList/>},
                         "genreList": {component: <GenreList/>},
                         "genre": {component: <Genre/>},
                         "userList": {component: <UserList/>},
