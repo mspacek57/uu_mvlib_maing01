@@ -24,8 +24,6 @@ const CLASS_NAMES = {
     max-width: 624px;
     margin: 0 auto;
     text-align: center;
-    background-color: #d678d6;
-    text-transform: capitalize;
 
     ${UU5.Utils.ScreenSize.getMinMediaQueries("s", `text-align: left;`)}
 
@@ -89,6 +87,8 @@ export const MVLibrarySpa = createVisualComponent({
                 left={
                     <UU5.Bricks.Div>
                         <UU5.Bricks.Box colorSchema='yellow-rich' content='MENU'/>
+                        <UU5.Bricks.Button colorSchema="yellow" bgStyle="outline">Přihlásit se/Sign</UU5.Bricks.Button>
+                        <UU5.Bricks.Icon icon="mdi-magnify"/>
                         <UU5.Bricks.LanguageSelector displayedLanguages={["cs", "en"]}/>
                         <div className="uu5-common-padding-s">
                             <div>
