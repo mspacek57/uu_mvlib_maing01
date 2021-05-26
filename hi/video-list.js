@@ -40,13 +40,9 @@ export const VideoList = createVisualComponent({
             },
             initialDtoIn: {data: {}}
         });
+        
 
-        const genreListResult = useDataList({
-            handlerMap: {
-                load: Calls.listGenre,
-            },
-            initialDtoIn: {data: {}}
-        });
+        
 
         const [selectedVideoData, setSelectedVideoData] = useState(null)
 
