@@ -6,7 +6,7 @@ const rf = fs.promises.readFile;
 const wf = fs.promises.writeFile;
 
 // 1
-const DEFAULT_STORAGE_PATH = path.join(__dirname, "storage", "comments.json");
+const DEFAULT_STORAGE_PATH = path.join(__dirname, "storage", "comment.json");
 
 class CommentDao {
     constructor(storagePath) {
@@ -33,7 +33,7 @@ class CommentDao {
     }
 
     // get
-    async getcomment(id) {
+    async getComment(id) {
         const comments = await this._loadAllComments();
         if (comments[id]) {
             return comments[id];
@@ -45,7 +45,7 @@ class CommentDao {
     }
 
     // update
-    async updatecomment(comment) {
+    async updateComment(comment) {
         const comments = await this._loadAllComments();
         if (comments[comment.id]) {
             comments[comment.id] = comment;

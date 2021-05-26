@@ -77,7 +77,7 @@ export const CommentList = createVisualComponent({
             {
                 cell: cellProps => {
                     let video = videoList.find(item => item.id == cellProps.data.data.video);
-                    if (video) { return video.name } else return ""
+                    if (video) { return video.title } else return ""
                 },
                 header: <UU5.Bricks.Lsi lsi={{ en: "Video", cs: "Videoklip" }} />
             },
@@ -116,7 +116,7 @@ export const CommentList = createVisualComponent({
                     child = (
                         <Uu5Tiles.List
                             height="auto"
-                            data={/* dataListResult.data */"test"}
+                            data={dataListResult.data}
                             columns={columns}
                             rowHeight={"76px"}
                             rowAlignment={"center"}
@@ -146,8 +146,8 @@ export const CommentList = createVisualComponent({
                     <UU5.Bricks.Modal offsetTop={100} shown={selectedCommentData}>
                         <CommentUpdateForm
                             createItem={dataListResult.handlerMap.createItem}
-                            setSelectedVideoData={setSelectedCommentData}
-                            selectedVideoData={selectedCommentData}
+                            setSelectedCommentData={setSelectedCommentData}
+                            selectedCommentData={selectedCommentData}
                         />
                     </UU5.Bricks.Modal>
                     <UU5.Bricks.Header content={<UU5.Bricks.Lsi lsi={{ en: "Comments", cs: "Komentáře" }} />} level={3} />
