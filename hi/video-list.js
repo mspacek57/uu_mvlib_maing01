@@ -130,7 +130,7 @@ export const VideoList = createVisualComponent({
         }
 
         function showVideo(id) {
-            UU5.Environment.getRouter().setRoute("video", {id: id})
+            UU5.Environment.getRouter().setRoute("videoDetail", {id: id})
         }
 
         //@@viewOff:private

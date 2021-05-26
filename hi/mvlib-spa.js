@@ -10,6 +10,7 @@ import User from "user";
 import UserList from "userList";
 import Video from "video";
 import VideoList from "videoList";
+import VideoDetail from "videoDetail"
 //@@viewOff:imports
 
 const STATICS = {
@@ -50,13 +51,8 @@ export const MVLibrarySpa = createVisualComponent({
 
     render(props) {
         //@@viewOn:private
-        function goToVideoList() {
-            UU5.Environment.getRouter().setRoute("videoList")
-        }
-
-        function goToArtistList() {
-            UU5.Environment.getRouter().setRoute("artistList")
-        }
+        
+        
         function goToGenreList() {
             UU5.Environment.getRouter().setRoute("genreList")
         }
@@ -141,6 +137,7 @@ export const MVLibrarySpa = createVisualComponent({
                         "user": {component: <User/>},
                         "videoList": {component: <VideoList/>},
                         "video": {component: <Video/>},
+                        "videoDetail":{component: <VideoDetail/>}
                     }}/>
             </UU5.Bricks.Page>
         );

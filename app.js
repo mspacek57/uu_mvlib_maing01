@@ -29,6 +29,9 @@ app.use("/video-list.js", function(req,res) {
 app.use("/video-update-form.js", function(req,res) {
     res.sendFile(path.join(__dirname+'/hi/video-update-form.js'));
 })
+app.use("/video-detail.js", function(req,res) {
+    res.sendFile(path.join(__dirname+'/hi/video-detail.js'));
+})
 app.use("/genre.js", function(req,res) {
     res.sendFile(path.join(__dirname+'/hi/genre.js'));
 })
