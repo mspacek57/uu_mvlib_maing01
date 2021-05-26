@@ -1,4 +1,19 @@
 {
+  "1": {
+    "id": "1",
+    "username": "martin",
+    "password": "123"
+  },
+  "2": {
+    "id": "2",
+    "username": "chleb38",
+    "password": "666"
+  },
+  "3": {
+    "id": "3",
+    "username": "krutaOaka",
+    "password": "999"
+  },
   "test": {
     "id": "test",
     "username": "Admin",

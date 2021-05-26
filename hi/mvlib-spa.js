@@ -75,32 +75,35 @@ export const MVLibrarySpa = createVisualComponent({
             <UU5.Bricks.Page
                 {...attrs}
                 type="1"
-                leftWrapperProps={{style: {backgroundColor: '#e3a8a8'}}}
+                leftWrapperProps={{style: {backgroundColor: '#e3e3e3'}}}
                 top={
-                    <UU5.Bricks.Box colorSchema="brown-rich" className="center">
+                    <UU5.Bricks.Box colorSchema="black" className="center">
                         <UU5.Bricks.Lsi lsi={{en: "MV Library - The best videoclips from whole world", cs: "MV Library - nejlepší videoklipy z celého světa"}}/>
                     </UU5.Bricks.Box>
                 }
-                bottom={<UU5.Bricks.Box colorSchema="brown" className="center">Created by TEAM 13</UU5.Bricks.Box>}
+                bottom={<UU5.Bricks.Box colorSchema="black" className="center">Created by TEAM 13</UU5.Bricks.Box>}
                 left={
-                    <UU5.Bricks.Div>
-                        <UU5.Bricks.Box colorSchema='yellow-rich' content='MENU'/>
-                        <UU5.Bricks.Button colorSchema="yellow" bgStyle="outline">Přihlásit se/Sign</UU5.Bricks.Button>
-                        <UU5.Bricks.Icon icon="mdi-magnify"/>
+                    <UU5.Bricks.Div>                                            
                         <UU5.Bricks.LanguageSelector displayedLanguages={["cs", "en"]}/>
                         <div className="uu5-common-padding-s">
                             <div>
                                 <UU5.Bricks.Button
+                                baseline = "true"
+                                    displayBlock="true"
+                                    size="xl"
                                     bgStyle={"transparent"}
                                     onClick={goToVideoList}
                                 >
-                                    <UU5.Bricks.Icon icon="mdi-library-books"/>
+                                    <UU5.Bricks.Icon icon="mdi-camera"/>
                                     <UU5.Bricks.Lsi lsi={{en: "Videos", cs: "Videoklipy"}}/>
                                 </UU5.Bricks.Button>
 
                             </div>
+                            <UU5.BlockLayout.Line />
                             <div>
                                 <UU5.Bricks.Button
+                                displayBlock="true"
+                                size="xl"
                                     bgStyle={"transparent"}
                                     onClick={goToGenreList}
                                 >
@@ -109,12 +112,15 @@ export const MVLibrarySpa = createVisualComponent({
                                 </UU5.Bricks.Button>
 
                             </div>
+                            <UU5.BlockLayout.Line />
                             <div>
                                 <UU5.Bricks.Button
+                                displayBlock="true"
+                                size="xl"
                                     bgStyle={"transparent"}
                                     onClick={goToUserList}
                                 >
-                                    <UU5.Bricks.Icon icon="mdi-library-books"/>
+                                    <UU5.Bricks.Icon icon="mdi-account"/>
                                     <UU5.Bricks.Lsi lsi={{en: "Users", cs: "Uživatelé"}}/>
                                 </UU5.Bricks.Button>
 
