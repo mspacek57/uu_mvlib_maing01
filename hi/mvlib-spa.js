@@ -18,10 +18,12 @@ const STATICS = {
 
 const CLASS_NAMES = {
     welcomeRow: () => Config.Css.css`
-    padding: 56px 0 20px;
+    padding: 36px 15px 36px;
     max-width: 624px;
     margin: 0 auto;
     text-align: center;
+    background-color: #ffb3ff;
+    text-transform: capitalize;
 
     ${UU5.Utils.ScreenSize.getMinMediaQueries("s", `text-align: left;`)}
 
@@ -46,6 +48,13 @@ export const MVLibrarySpa = createVisualComponent({
 
     render(props) {
         //@@viewOn:private
+        function goToVideoList() {
+            UU5.Environment.getRouter().setRoute("videoList")
+        }
+
+        function goToArtistList() {
+            UU5.Environment.getRouter().setRoute("artistList")
+        }
         function goToGenreList() {
             UU5.Environment.getRouter().setRoute("genreList")
         }
@@ -67,14 +76,16 @@ export const MVLibrarySpa = createVisualComponent({
                 type="1"
                 leftWrapperProps={{style: {backgroundColor: '#fafafa'}}}
                 top={
-                    <UU5.Bricks.Box colorSchema="blue-rich" className="center">
-                        <UU5.Bricks.Lsi lsi={{en: "MV Library", cs: "MV Library"}}/>
+                    <UU5.Bricks.Box colorSchema="brown-rich" className="center">
+                        <UU5.Bricks.Lsi lsi={{en: "MV Library - The best videoclips from whole world", cs: "MV Library - nejlepší videoklipy z celého světa"}}/>
                     </UU5.Bricks.Box>
                 }
-                bottom={<UU5.Bricks.Box colorSchema="grey" className="center"></UU5.Bricks.Box>}
+                bottom={<UU5.Bricks.Box colorSchema="brown" className="center"></UU5.Bricks.Box>}
                 left={
                     <UU5.Bricks.Div>
-                        <UU5.Bricks.Box colorSchema='green' content='Menu'/>
+                        <UU5.Bricks.Box colorSchema='yellow-rich' content='Menu'/>
+                                                <UU5.Bricks.Button colorSchema="yellow" bgStyle="outline">Register</UU5.Bricks.Button>
+                        <UU5.Bricks.Icon icon="mdi-magnify"/>
                         <UU5.Bricks.LanguageSelector displayedLanguages={["cs", "en"]}/>
                         <div className="uu5-common-padding-s">
                             <div>
