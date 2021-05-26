@@ -24,7 +24,7 @@ const CLASS_NAMES = {
     max-width: 624px;
     margin: 0 auto;
     text-align: center;
-    background-color: #ffb3ff;
+    background-color: #d678d6;
     text-transform: capitalize;
 
     ${UU5.Utils.ScreenSize.getMinMediaQueries("s", `text-align: left;`)}
@@ -79,7 +79,7 @@ export const MVLibrarySpa = createVisualComponent({
             <UU5.Bricks.Page
                 {...attrs}
                 type="1"
-                leftWrapperProps={{style: {backgroundColor: '#fafafa'}}}
+                leftWrapperProps={{style: {backgroundColor: '#e3a8a8'}}}
                 top={
                     <UU5.Bricks.Box colorSchema="brown-rich" className="center">
                         <UU5.Bricks.Lsi lsi={{en: "MV Library - The best videoclips from whole world", cs: "MV Library - nejlepší videoklipy z celého světa"}}/>
@@ -88,9 +88,7 @@ export const MVLibrarySpa = createVisualComponent({
                 bottom={<UU5.Bricks.Box colorSchema="brown" className="center">Created by TEAM 13</UU5.Bricks.Box>}
                 left={
                     <UU5.Bricks.Div>
-                        <UU5.Bricks.Box colorSchema='yellow-rich' content='Menu'/>
-                                                <UU5.Bricks.Button colorSchema="yellow" bgStyle="outline">Register</UU5.Bricks.Button>
-                        <UU5.Bricks.Icon icon="mdi-magnify"/>
+                        <UU5.Bricks.Box colorSchema='yellow-rich' content='MENU'/>
                         <UU5.Bricks.LanguageSelector displayedLanguages={["cs", "en"]}/>
                         <div className="uu5-common-padding-s">
                             <div>

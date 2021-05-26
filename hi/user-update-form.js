@@ -63,7 +63,7 @@ export const UserUpdateForm = createVisualComponent({
                     onCancel={() => props.setSelectedUserData(null)}
                     header={selectedUserData && selectedUserData.id
                         ? <UU5.Bricks.Lsi lsi={{en: "Update User", cs: "Upravit uživatele"}}/>
-                        : <UU5.Bricks.Lsi lsi={{en: "Create User", cs: "Vytvořit uživatele"}}/>
+                        : <UU5.Bricks.Lsi lsi={{en: "Register", cs: "Registrovat se"}}/>
                     }
                     spacing={4}
                     level={5}
