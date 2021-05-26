@@ -1,0 +1,13 @@
+{
+  "id": {
+    "id": "id",
+    "title": "One",
+    "artist": "Metallica",
+    "album": "Best of",
+    "year": "",
+    "description": "",
+    "link": "https://www.youtube.com/watch?v=WM8bTdBs-cw",
+    "isRestricted": false,
+    "genre": ""
+  }
+}

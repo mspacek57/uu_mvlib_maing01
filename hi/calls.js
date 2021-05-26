@@ -11,6 +11,31 @@ const call = async (method, uri, dtoIn) => {
 let Calls = {
     /** URL containing app base, e.g. "https://uuos9.plus4u.net/vnd-app/awid/". */
 
+
+    createVideo(dtoIn) {
+        let commandUri = Calls.getCommandUri("video/create");
+        return call("post", commandUri, dtoIn.data);
+    },
+
+    getVideo(dtoIn) {
+        let commandUri = Calls.getCommandUri("video/get");
+        return call("get", commandUri, dtoIn.data);
+    },
+
+    updateVideo(dtoIn) {
+        let commandUri = Calls.getCommandUri("video/update");
+        return call("post", commandUri, dtoIn.data);
+    },
+
+    deleteVideo(dtoIn) {
+        let commandUri = Calls.getCommandUri("video/delete");
+        return call("post", commandUri, dtoIn.data);
+    },
+
+    listVideo(dtoIn) {
+        let commandUri = Calls.getCommandUri("video/list");
+        return call("get", commandUri, dtoIn.data);
+    },
     createGenre(dtoIn) {
         let commandUri = Calls.getCommandUri("genre/create");
         return call("post", commandUri, dtoIn.data);

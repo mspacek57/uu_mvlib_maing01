@@ -22,7 +22,7 @@
     "package": "uu_appg01_devkit package",
     "deploy": "uu_appg01_devkit deploy",
     "undeploy": "uu_appg01_devkit undeploy",
-    "start": "uu_appg01_devkit start",
+    "start": "node app.js",
     "prettify": "uu_appg01_devkit prettify",
     "vulnerabilityScan": "uu_appg01_devkit vulnerabilityScan",
     "uuAppBox": "uu_appg01_devkit uuAppBox",

@@ -8,6 +8,8 @@ import Genre from "genre";
 import GenreList from "genreList";
 import User from "user";
 import UserList from "userList";
+import Video from "video";
+import VideoList from "videoList";
 //@@viewOff:imports
 
 const STATICS = {
@@ -52,6 +54,9 @@ export const MVLibrarySpa = createVisualComponent({
         function goToUserList() {
             UU5.Environment.getRouter().setRoute("userList")
         }
+        function goToVideoList() {
+            UU5.Environment.getRouter().setRoute("videoList")
+        }
 
 
         //@@viewOff:private
@@ -77,6 +82,16 @@ export const MVLibrarySpa = createVisualComponent({
                         <UU5.Bricks.Box colorSchema='green' content='Menu'/>
                         <UU5.Bricks.LanguageSelector displayedLanguages={["cs", "en"]}/>
                         <div className="uu5-common-padding-s">
+                            <div>
+                                <UU5.Bricks.Button
+                                    bgStyle={"transparent"}
+                                    onClick={goToVideoList}
+                                >
+                                    <UU5.Bricks.Icon icon="mdi-library-books"/>
+                                    <UU5.Bricks.Lsi lsi={{en: "Videos", cs: "Videoklipy"}}/>
+                                </UU5.Bricks.Button>
+
+                            </div>
                             <div>
                                 <UU5.Bricks.Button
                                     bgStyle={"transparent"}
@@ -113,6 +128,8 @@ export const MVLibrarySpa = createVisualComponent({
                         "genre": {component: <Genre/>},
                         "userList": {component: <UserList/>},
                         "user": {component: <User/>},
+                        "videoList": {component: <VideoList/>},
+                        "video": {component: <Video/>},
                     }}/>
             </UU5.Bricks.Page>
         );
