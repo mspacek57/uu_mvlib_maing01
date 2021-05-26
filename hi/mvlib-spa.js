@@ -85,7 +85,7 @@ export const MVLibrarySpa = createVisualComponent({
                         <UU5.Bricks.Lsi lsi={{en: "MV Library - The best videoclips from whole world", cs: "MV Library - nejlepší videoklipy z celého světa"}}/>
                     </UU5.Bricks.Box>
                 }
-                bottom={<UU5.Bricks.Box colorSchema="brown" className="center"></UU5.Bricks.Box>}
+                bottom={<UU5.Bricks.Box colorSchema="brown" className="center">Created by TEAM 13</UU5.Bricks.Box>}
                 left={
                     <UU5.Bricks.Div>
                         <UU5.Bricks.Box colorSchema='yellow-rich' content='Menu'/>
