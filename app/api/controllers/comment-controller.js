@@ -5,7 +5,7 @@ const CreateAbl = require("../../abl/comment/create-abl");
 const GetAbl = require("../../abl/comment/get-abl");
 const UpdateAbl = require("../../abl/comment/update-abl");
 const DeleteAbl = require("../../abl/comment/delete-abl");
-const ListAbl = require("../../abl/genre/list-abl");
+const ListAbl = require("../../abl/comment/list-abl");
 
 router.post("/create", async (req, res) => {
     await CreateAbl(req, res)

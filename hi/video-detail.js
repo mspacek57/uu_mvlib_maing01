@@ -4,6 +4,7 @@ import UU5 from "uu5g04";
 import "uu5g04-bricks";
 import { createVisualComponent, useDataObject } from "uu5g04-hooks";
 import Calls from "calls";
+import CommentList from "commentList";
 //@@viewOff:imports
 
 const STATICS = {
@@ -63,14 +64,10 @@ export const VideoDetail = createVisualComponent({
         //@@viewOn:render
         const attrs = UU5.Common.VisualComponent.getAttrs(props);
         const videoInfo = videoDataObject.data
-        console.log(JSON.stringify(videoInfo || {}, null, 2))
         if (videoInfo != undefined) {
             return (
                 <div {...attrs}>
                     <UU5.Bricks.YoutubeVideo src={videoInfo.link} />
-                    <div>
-                    <UU5.Forms.TextArea label='Comment' placeholder='Insert text here.' size="xl"/>
-                    </div>
                     <UU5.Bricks.Container header={videoInfo.artist + " - " + videoInfo.title}>
                         <UU5.Bricks.Row>
                             {"Album: " + videoInfo.album}
@@ -86,6 +83,7 @@ export const VideoDetail = createVisualComponent({
                         </UU5.Bricks.Row>
 
                     </UU5.Bricks.Container>
+                    <CommentList /* video={videoInfo ? videoInfo.id : ""} *//>
                 </div>
             );
         } else return (

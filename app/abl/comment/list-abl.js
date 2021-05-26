@@ -3,12 +3,12 @@ const CommentDao = require("../../dao/comment-dao");
 let dao = new CommentDao(path.join(__dirname, "..", "..", "storage", "comment.json"))
 
 async function ListAbl(req, res) {
-    let {name} = req.body;
+    let {id} = req.body;
     if (
-        !name || (name && typeof name === "string" && name.length < 30)
+        !id || (id && typeof id === "string" && id.length < 25)
     ) {
         try {
-            let commentList = await dao.listComment(name);
+            let commentList = await dao.listComments(id);
             res.status(200).json({itemList: commentList, total: commentList.length});
         } catch (e) {
             res.status(500).json({error: e})

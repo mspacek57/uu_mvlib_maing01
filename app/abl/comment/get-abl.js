@@ -1,6 +1,6 @@
 const path = require("path");
 const CommentDao = require("../../dao/comment-dao");
-let dao = new CommentDao(path.join(__dirname, "..", "..", "storage", "Comment.json"))
+let dao = new CommentDao(path.join(__dirname, "..", "..", "storage", "comment.json"))
 
 
 async function GetAbl(req, res) {

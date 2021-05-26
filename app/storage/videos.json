@@ -10,6 +10,17 @@
     "isRestricted": false,
     "genre": "rck"
   },
+  "5": {
+    "id": "5",
+    "title": "test",
+    "artist": "test",
+    "album": "",
+    "year": "",
+    "description": "",
+    "link": "https://www.youtube.com/watch?v=aSNJ00iAZ7I",
+    "isRestricted": false,
+    "genre": ""
+  },
   "id": {
     "id": "id",
     "title": "One",
