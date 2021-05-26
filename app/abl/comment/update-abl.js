@@ -1,6 +1,6 @@
 const path = require("path");
 const CommentDao = require("../../dao/comment-dao");
-let dao = new CommentDao(path.join(__dirname, "..", "..", "storage", "comment.json"))
+let dao = new CommentDao(path.join(__dirname, "..", "..", "storage", "comments.json"))
 const VideoDao = require("../../dao/video-dao");
 let videoDao = new VideoDao(path.join(__dirname, "..", "..", "storage", "videos.json"))
 

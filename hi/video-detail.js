@@ -68,9 +68,9 @@ export const VideoDetail = createVisualComponent({
             return (
                 <div {...attrs}>
                     <UU5.Bricks.Container header={videoInfo.artist + " - " + videoInfo.title}>
-                    <UU5.Bricks.YoutubeVideo src={videoInfo.link} />
-                    
-                   
+                        <UU5.Bricks.YoutubeVideo src={videoInfo.link} />
+
+
                         <UU5.Bricks.Row>
                             {"Album: " + videoInfo.album}
                         </UU5.Bricks.Row>
@@ -83,12 +83,9 @@ export const VideoDetail = createVisualComponent({
                         <UU5.Bricks.Row>
                             {videoInfo.description}
                         </UU5.Bricks.Row>
-                        <div>
-                      <UU5.Forms.TextArea label='Comment' placeholder='Insert text here.' size="xl"/>
-                     </div>
-
+                        
                     </UU5.Bricks.Container>
-                    <CommentList /* video={videoInfo ? videoInfo.id : ""} *//>
+                    <CommentList video={videoInfo ? videoInfo.id : ""} />
                 </div>
             );
         } else return (

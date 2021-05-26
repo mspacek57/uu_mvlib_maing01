@@ -21,7 +21,7 @@ const CLASS_NAMES = {
 export const CommentList = createVisualComponent({
     ...STATICS,
 
-    /* //@@viewOn:propTypes
+    //@@viewOn:propTypes
     propTypes: {
         video: UU5.PropTypes.string,
     },
@@ -31,9 +31,9 @@ export const CommentList = createVisualComponent({
     defaultProps: {
         video: "",
     },
-    //@@viewOff:defaultProps */
+    //@@viewOff:defaultProps
 
-    render(props) {
+    render({ video }) {
         //@@viewOn:private
         const dataListResult = useDataList({
             handlerMap: {
@@ -53,14 +53,15 @@ export const CommentList = createVisualComponent({
             initialDtoIn: { data: {} }
         });
 
+
         let videoList = [];
         videoListResult.data && videoListResult.data.forEach(video => {
             videoList.push(video.data)
-        })
+        });
 
 
 
-        const [selectedCommentData, setSelectedCommentData] = useState(null)
+        const [selectedCommentData, setSelectedCommentData] = useState(null);
 
         const columns = [
             {
@@ -138,8 +139,7 @@ export const CommentList = createVisualComponent({
         //@@viewOff:interface
 
         //@@viewOn:render
-        const attrs = UU5.Common.VisualComponent.getAttrs(props);
-        console.log("test")
+        const attrs = UU5.Common.VisualComponent.getAttrs({ video });
         if (dataListResult.data != undefined) {
             return (
                 <div {...attrs} className={"uu5-common-padding-s"}>
