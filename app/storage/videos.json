@@ -1,35 +1,68 @@
 {
+  "1": {
+    "id": "1",
+    "title": "Thriller",
+    "artist": "MJ",
+    "album": "I can do it",
+    "year": "1949",
+    "description": "Young MJ dropping his new mix tape",
+    "link": "https://www.youtube.com/watch?v=4V90AmXnguw",
+    "isRestricted": false,
+    "genre": "rck"
+  },
   "2": {
     "id": "2",
-    "title": "Lithium",
-    "artist": "Nirvana",
-    "album": "Nevermind",
-    "year": "1991",
-    "description": "",
-    "link": "https://www.youtube.com/watch?v=pkcJEvMcnEg",
+    "title": "Yo Mama",
+    "artist": "Brody",
+    "album": "Your FAMILY",
+    "year": "2022",
+    "description": "Brody roastin yo mama, once again",
+    "link": "https://www.youtube.com/watch?v=3RGjvBrRRek",
+    "isRestricted": false,
+    "genre": "sadss"
+  },
+  "3": {
+    "id": "3",
+    "title": "Yo Fatha",
+    "artist": "Big Chungus",
+    "album": "Yo Family",
+    "year": "1998",
+    "description": "Young BHRODY WITH HIS BIG IFST HIT",
+    "link": "https://www.youtube.com/watch?v=Qy3qk4ohwFA",
     "isRestricted": false,
     "genre": "rck"
   },
-  "id": {
-    "id": "id",
-    "title": "One",
-    "artist": "Metallica",
-    "album": "Best of",
-    "year": "",
-    "description": "",
-    "link": "https://www.youtube.com/watch?v=WM8bTdBs-cw",
-    "isRestricted": false,
-    "genre": "rck"
-  },
-  "aaa": {
-    "id": "aaa",
-    "title": "aa",
-    "artist": "aa",
+  "5": {
+    "id": "5",
+    "title": "Janek",
+    "artist": "Srnka",
     "album": "",
     "year": "",
     "description": "",
-    "link": "aa",
+    "link": "https://www.youtube.com/watch?v=eQFIKP9rGhQ",
     "isRestricted": false,
-    "genre": "rck"
+    "genre": ""
+  },
+  "AAA": {
+    "id": "AAA",
+    "title": "BB",
+    "artist": "23",
+    "album": "123123",
+    "year": "4213",
+    "description": "ASDASDASD",
+    "link": "AAAAAAAAAAA",
+    "isRestricted": true,
+    "genre": "sadss"
+  },
+  "id ": {
+    "id": "id ",
+    "title": "furt nejsou",
+    "artist": " autmaticky",
+    "album": "",
+    "year": "",
+    "description": "",
+    "link": "https://www.youtube.com/watch?v=6JnGBs88sL0",
+    "isRestricted": false,
+    "genre": ""
   }
 }

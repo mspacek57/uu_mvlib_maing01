@@ -88,12 +88,13 @@ export const VideoList = createVisualComponent({
                     return (
                         <div className={"left"}>
                             <UU5.Bricks.Button
-                                content={<UU5.Bricks.Icon icon={"mdi-book-open"} />}
+                                colorSchema="green"
+                                content={<UU5.Bricks.Icon icon={"mdi-magnify"}  />}
                                 onClick={() => showVideo(cellProps.data.data.id)}
                                 bgStyle={"transparent"}
                             />
                             <UU5.Bricks.Button
-                                content={<UU5.Bricks.Icon icon={"mdi-pencil"} />}
+                                content={<UU5.Bricks.Icon icon={"mdi-book-open"} />}
                                 colorSchema={"blue"}
                                 bgStyle={"transparent"}
                                 onClick={() => setSelectedVideoData(cellProps.data)}
@@ -158,7 +159,11 @@ export const VideoList = createVisualComponent({
                         selectedVideoData={selectedVideoData}
                     />
                 </UU5.Bricks.Modal>
-                <UU5.Bricks.Header content={<UU5.Bricks.Lsi lsi={{en: "Video List", cs: "Seznam videoklipů"}}/>} level={3}/>
+                <UU5.Bricks.Header 
+                content={<UU5.Bricks.Lsi lsi={{en: "Video List", cs: "Seznam videoklipů"}}/>} 
+                level={1}
+                
+                />
                 <div className={"left"}>
                     <UU5.Bricks.Button
                         content={<UU5.Bricks.Lsi lsi={{ en: "Add a Video", cs: "Přidat videoklip" }} />}
