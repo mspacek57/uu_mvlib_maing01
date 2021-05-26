@@ -38,7 +38,7 @@ class GenreDao {
         if (genres[id]) {
             return genres[id];
         } else {
-            const e = new Error(`Genre with id '${id}' does not exist.`);
+            const e = new Error(`Genre '${id}' does not exist.`);
             e.code = "FAILED_TO_GET_GENRE";
             throw e;
         }
