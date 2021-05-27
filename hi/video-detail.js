@@ -69,14 +69,9 @@ export const VideoDetail = createVisualComponent({
                 <div {...attrs}>
                     
                     <UU5.Bricks.Container header={videoInfo.artist + " - " + videoInfo.title}>
-<<<<<<< HEAD
                     <UU5.Bricks.YoutubeVideo src={videoInfo.link} />
-                        
-=======
-                        <UU5.Bricks.YoutubeVideo src={videoInfo.link} />
+        
 
-
->>>>>>> f86f2421fd3c9346da9e1bdc62708b5926fb43c1
                         <UU5.Bricks.Row>
                             {"Album: " + videoInfo.album}
                         </UU5.Bricks.Row>
