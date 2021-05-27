@@ -70,7 +70,7 @@ export const CommentList = createVisualComponent({
                     {    
                         console.log(video.id + "  je vidoe id")   
                         console.log(cellProps.data.data.video + "  je to druhy")                    
-                        return cellProps.data.data.id+" <!>"  
+                        return cellProps.data.data.id+" <Komentář patří k danému videu>"  
                     }else
                     return cellProps.data.data.id
                 },
