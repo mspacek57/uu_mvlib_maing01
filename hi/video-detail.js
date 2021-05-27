@@ -67,10 +67,10 @@ export const VideoDetail = createVisualComponent({
         if (videoInfo != undefined) {
             return (
                 <div {...attrs}>
+                    
                     <UU5.Bricks.Container header={videoInfo.artist + " - " + videoInfo.title}>
                     <UU5.Bricks.YoutubeVideo src={videoInfo.link} />
-                    
-                   
+                        
                         <UU5.Bricks.Row>
                             {"Album: " + videoInfo.album}
                         </UU5.Bricks.Row>
