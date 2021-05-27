@@ -67,6 +67,12 @@ export const CommentList = createVisualComponent({
         const columns = [
             {
                 cell: cellProps => {
+                    let video = videoList.find(item => item.id == cellProps.data.data.video);
+
+                    if(video.id == cellProps.data.data.video)
+                    {                         
+                        return cellProps.data.data.id+" <!>"  
+                    }else
                     return cellProps.data.data.id
                 },
                 header: "id",

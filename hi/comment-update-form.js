@@ -114,6 +114,7 @@ export const CommentUpdateForm = createVisualComponent({
                     />
                     <UU5.Forms.Select
                         name="video"
+                        required
                         label={<UU5.Bricks.Lsi lsi={{en: "Video", cs: "Videoklip"}}/>}
                         value={selectedCommentData && selectedCommentData.video}
                     >
@@ -121,6 +122,7 @@ export const CommentUpdateForm = createVisualComponent({
                     </UU5.Forms.Select>
                     <UU5.Forms.Select
                         name="user"
+                        required
                         label={<UU5.Bricks.Lsi lsi={{en: "User", cs: "Uživatel"}}/>}
                         value={selectedCommentData && selectedCommentData.video}
                     >
