@@ -1,27 +1,19 @@
 {
+  "1": {
+    "id": 1,
+    "name": "Pop"
+  },
   "2": {
     "id": 2,
-    "name": "test"
+    "name": "Classical"
   },
   "3": {
     "id": 3,
-    "name": "Mamka"
+    "name": "Rap"
   },
   "4": {
     "id": 4,
-    "name": "ukolebavky"
-  },
-  "5": {
-    "id": 5,
-    "name": "paprikaž"
-  },
-  "6": {
-    "id": 6,
-    "name": "test"
-  },
-  "7": {
-    "id": 7,
-    "name": "test3"
+    "name": "Hardstyle"
   },
   "8": {
     "id": 8,

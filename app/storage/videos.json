@@ -19,7 +19,7 @@
     "description": "Brody roastin yo mama, once again",
     "link": "https://www.youtube.com/watch?v=3RGjvBrRRek",
     "isRestricted": false,
-    "genre": "8"
+    "genre": "1"
   },
   "3": {
     "id": 3,
@@ -30,39 +30,39 @@
     "description": "Young BHRODY WITH HIS BIG IFST HIT",
     "link": "https://www.youtube.com/watch?v=Qy3qk4ohwFA",
     "isRestricted": false,
-    "genre": "4"
+    "genre": "2"
   },
   "4": {
     "id": 4,
-    "title": "BB",
-    "artist": "23",
-    "album": "123123",
-    "year": "4213",
-    "description": "ASDASDASD",
-    "link": "AAAAAAAAAAA",
-    "isRestricted": true,
-    "genre": "sadss"
+    "title": "Painkiller",
+    "artist": "Judas Priest",
+    "album": "-",
+    "year": "-",
+    "description": "absolute banger",
+    "link": "https://www.youtube.com/watch?v=nM__lPTWThU",
+    "isRestricted": false,
+    "genre": "8"
   },
   "5": {
     "id": 5,
-    "title": "Janek",
-    "artist": "Srnka",
-    "album": "",
-    "year": "",
-    "description": "",
-    "link": "https://www.youtube.com/watch?v=eQFIKP9rGhQ",
+    "title": "HUMBLE.",
+    "artist": "Kendrick Lamar",
+    "album": "Damn.",
+    "year": "2017",
+    "description": "Explicit, please cover your precious ears",
+    "link": "https://www.youtube.com/watch?v=tvTRZJ-4EyI",
     "isRestricted": false,
-    "genre": ""
+    "genre": "3"
   },
   "6": {
     "id": 6,
-    "title": "furt nejsou",
-    "artist": " autmaticky",
-    "album": "",
-    "year": "",
-    "description": "",
-    "link": "https://www.youtube.com/watch?v=6JnGBs88sL0",
+    "title": "Thunder (Evil Activities remix)",
+    "artist": "Yellow Claw & The Opposites",
+    "album": "-",
+    "year": "2014",
+    "description": "untz untz",
+    "link": "https://www.youtube.com/watch?v=MgaiFoqHvPM",
     "isRestricted": false,
-    "genre": ""
+    "genre": "4"
   }
 }
