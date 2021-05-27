@@ -68,34 +68,35 @@ export const VideoDetail = createVisualComponent({
             return (
                 <div {...attrs}>
                     <UU5.Bricks.Container header={videoInfo.artist + " - " + videoInfo.title}>
-                    
 
-                    <UU5.Bricks.Column colWidth="xs-20 s-18 m-15 l-20 xl-20">
-                    <UU5.Bricks.YoutubeVideo src={videoInfo.link} />                    
-                    </UU5.Bricks.Column>
-                    
-                    <UU5.Bricks.Column colWidth="xs-20 s-18 m-15 l-20 xl-20">
-                        <UU5.Bricks.Row>
-                            {"Album: " + videoInfo.album}
-                        </UU5.Bricks.Row>
-                        <UU5.Bricks.Row>
-                            {"Year: " + videoInfo.year}
-                        </UU5.Bricks.Row>
-                        
-                        <UU5.Bricks.Row>
-                            Description:
-                    </UU5.Bricks.Row>
-                    </UU5.Bricks.Column>
-                        <UU5.Bricks.Row>
-                            {videoInfo.description}
-                        </UU5.Bricks.Row>
-                        
+
+                        <UU5.Bricks.Column colWidth="xs-8 s-8 m-8 l-8 xl-8">
+                            <UU5.Bricks.YoutubeVideo src={videoInfo.link} />
+                        </UU5.Bricks.Column>
+
+                        <UU5.Bricks.Column colWidth="xs-4 s-4 m-4 l-4 xl-4">
+                            <UU5.Bricks.Row>
+                                {"Album: " + videoInfo.album}
+                            </UU5.Bricks.Row>
+                            <UU5.Bricks.Row>
+                                {"Year: " + videoInfo.year}
+                            </UU5.Bricks.Row>
+
+                            <UU5.Bricks.Row>
+                                {"Description: " + videoInfo.description}
+                            </UU5.Bricks.Row>
+                        </UU5.Bricks.Column>
+
+
 
                     </UU5.Bricks.Container>
-                    <UU5.Bricks.Row>
-                    
-                    <CommentList video={videoInfo ? videoInfo.id : ""} />      
-                    </UU5.Bricks.Row>           
+                    <UU5.Bricks.Column colWidth="xs-12 s-12 m-12 l-12 xl-12">
+                        <UU5.Bricks.Row>
+
+                            <CommentList video={videoInfo ? videoInfo.id : ""} />
+                        </UU5.Bricks.Row>
+                    </UU5.Bricks.Column>
+
                 </div>
             );
         } else return (
