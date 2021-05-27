@@ -5,7 +5,7 @@ let dao = new GenreDao(path.join(__dirname, "..", "..", "storage", "genres.json"
 async function UpdateAbl(req, res) {
     let {id, name} = req.body;
     if (
-        (id && typeof id === "string" && id.length < 25) &&
+        (id && typeof id === "number" && id>0) &&
         (name && typeof name === "string" && name.length < 200)
     ) {
         const genre = {id, name};

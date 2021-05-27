@@ -36,6 +36,30 @@ let Calls = {
         let commandUri = Calls.getCommandUri("video/list");
         return call("get", commandUri, dtoIn.data);
     },
+    createComment(dtoIn) {
+        let commandUri = Calls.getCommandUri("comment/create");
+        return call("post", commandUri, dtoIn.data);
+    },
+
+    getComment(dtoIn) {
+        let commandUri = Calls.getCommandUri("comment/get");
+        return call("get", commandUri, dtoIn.data);
+    },
+
+    updateComment(dtoIn) {
+        let commandUri = Calls.getCommandUri("comment/update");
+        return call("post", commandUri, dtoIn.data);
+    },
+
+    deleteComment(dtoIn) {
+        let commandUri = Calls.getCommandUri("comment/delete");
+        return call("post", commandUri, dtoIn.data);
+    },
+
+    listComment(dtoIn) {
+        let commandUri = Calls.getCommandUri("comment/list");
+        return call("get", commandUri, dtoIn.data);
+    },
     createGenre(dtoIn) {
         let commandUri = Calls.getCommandUri("genre/create");
         return call("post", commandUri, dtoIn.data);

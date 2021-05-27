@@ -7,7 +7,7 @@ let genreDao = new GenreDao(path.join(__dirname, "..", "..", "storage", "genres.
 async function UpdateAbl(req, res) {
     let {id, title, artist, album, year, description, link, isRestricted, genre} = req.body;
     if (
-        id && typeof id === "string" && id.length < 25 &&
+        id && typeof id === "number" && id>0 &&
         title && typeof title === "string" && title.length < 200 &&
         artist && typeof artist === "string" && artist.length < 200 &&
         typeof album === "string" && album.length < 200 &&

@@ -10,7 +10,9 @@ import User from "user";
 import UserList from "userList";
 import Video from "video";
 import VideoList from "videoList";
-import VideoDetail from "videoDetail"
+import VideoDetail from "videoDetail";
+import Comment from "comment";
+import CommentList from "commentList";
 //@@viewOff:imports
 
 const STATICS = {
@@ -141,7 +143,9 @@ export const MVLibrarySpa = createVisualComponent({
                         "user": {component: <User/>},
                         "videoList": {component: <VideoList/>},
                         "video": {component: <Video/>},
-                        "videoDetail":{component: <VideoDetail/>}
+                        "videoDetail":{component: <VideoDetail/>},
+                        "commentList": {component: <CommentList/>},
+                        "comment": {component: <Comment/>},
                     }}/>
             </UU5.Bricks.Page>
         );

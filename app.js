@@ -6,6 +6,7 @@ const path = require('path');
 const genreRouter = require("./app/api/controllers/genre-controller");
 const userRouter = require("./app/api/controllers/user-controller");
 const videoRouter = require("./app/api/controllers/video-controller");
+const commentRouter = require("./app/api/controllers/comment-controller");
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/genre/", genreRouter);
 app.use("/user/", userRouter);
 app.use("/video/", videoRouter);
+app.use("/comment/", commentRouter);
 
 app.use("/mvlib-spa.js", function(req,res) {
     res.sendFile(path.join(__dirname+'/hi/mvlib-spa.js'));
@@ -31,6 +33,15 @@ app.use("/video-update-form.js", function(req,res) {
 })
 app.use("/video-detail.js", function(req,res) {
     res.sendFile(path.join(__dirname+'/hi/video-detail.js'));
+})
+app.use("/comment.js", function(req,res) {
+    res.sendFile(path.join(__dirname+'/hi/comment.js'));
+})
+app.use("/comment-list.js", function(req,res) {
+    res.sendFile(path.join(__dirname+'/hi/comment-list.js'));
+})
+app.use("/comment-update-form.js", function(req,res) {
+    res.sendFile(path.join(__dirname+'/hi/comment-update-form.js'));
 })
 app.use("/genre.js", function(req,res) {
     res.sendFile(path.join(__dirname+'/hi/genre.js'));

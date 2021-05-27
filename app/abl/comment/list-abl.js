@@ -1,14 +1,14 @@
 const path = require("path");
 const CommentDao = require("../../dao/comment-dao");
-let dao = new CommentDao(path.join(__dirname, "..", "..", "storage", "comment.json"))
+let dao = new CommentDao(path.join(__dirname, "..", "..", "storage", "comments.json"))
 
 async function ListAbl(req, res) {
-    let {name} = req.body;
+    let {video} = req.body;
     if (
-        !name || (name && typeof name === "string" && name.length < 30)
+        !video || (video && typeof video.video === "number" && video.video>0)
     ) {
         try {
-            let commentList = await dao.listComment(name);
+            let commentList = await dao.listComments(video);
             res.status(200).json({itemList: commentList, total: commentList.length});
         } catch (e) {
             res.status(500).json({error: e})

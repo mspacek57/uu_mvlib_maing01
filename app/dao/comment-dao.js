@@ -17,7 +17,7 @@ class CommentDao {
     async addComment(comment) {
         const comments = await this._loadAllComments();
         if (this._isDuplicate(comments, comment.id)) {
-            const e = new Error(`Comment with id '${book.id}' already exists.`);
+            const e = new Error(`Comment with id '${comment.id}' already exists.`);
             e.code = "DUPLICATE_CODE";
             throw e;
         }
@@ -26,15 +26,15 @@ class CommentDao {
             await wf(this._getStorageLocation(), JSON.stringify(comments, null, 2));
             return comment;
         } catch (error) {
-            const e = new Error(`Failed to store book with id '${book.id}' to local storage.`);
+            const e = new Error(`Failed to store comment with id '${comment.id}' to local storage.`);
             e.code = "FAILED_TO_STORE_COMMENT";
             throw e;
         }
     }
 
     // get
-    async getcomment(id) {
-        const comments = await this._loadAllcomments();
+    async getComment(id) {
+        const comments = await this._loadAllComments();
         if (comments[id]) {
             return comments[id];
         } else {
@@ -45,7 +45,7 @@ class CommentDao {
     }
 
     // update
-    async updatecomment(comment) {
+    async updateComment(comment) {
         const comments = await this._loadAllComments();
         if (comments[comment.id]) {
             comments[comment.id] = comment;
@@ -79,11 +79,11 @@ class CommentDao {
     }
 
     // list
-    async listComments(name) {
-        const comments = await this._loadAllcomments();
+    async listComments(video) {
+        const comments = await this._loadAllComments();
         let commentList = [];
         for (let id in comments) {
-            if (!name || comments[id].name.toLowerCase().includes(name.toLowerCase())) {
+            if (!video || comments[id].video == video.video) {
                 commentList.push(comments[id]);
             }
         }
@@ -91,7 +91,7 @@ class CommentDao {
     }
 
     // private
-    async _loadAllcomments() {
+    async _loadAllComments() {
         let comments;
         try {
             comments = JSON.parse(await rf(this._getStorageLocation()));
