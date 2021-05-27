@@ -43,8 +43,8 @@ export const CommentUpdateForm = createVisualComponent({
         dataListResult.data && dataListResult.data.forEach(video => {
             videoList.push(
                 <UU5.Forms.Select.Option
-                    key={video.data.id}
-                    value={video.data.id}
+                    key={video.data.id+""}
+                    value={video.data.id+""}
                     content={video.data.title}
                 />
             )
@@ -84,14 +84,8 @@ export const CommentUpdateForm = createVisualComponent({
                     labelColWidth={"xs-12 s-12 m4 l4 xl4"}
                     inputColWidth={"xs-12 s-12 m6 l6 xl6"}
                 >
-                    <UU5.Forms.Text
-                        name="id"
-                        label="id"
-                        placeholder="id"
-                        required
-                        value={selectedCommentData && selectedCommentData.id}
-                        readOnly={selectedCommentData && selectedCommentData.id}
-                    />
+                    {idField(selectedCommentData)}
+
                     <UU5.Forms.TextArea
                         name="text"
                         label={<UU5.Bricks.Lsi lsi={{ en: "Text", cs: "Text" }} />}
@@ -114,5 +108,21 @@ export const CommentUpdateForm = createVisualComponent({
         //@@viewOff:render
     },
 });
+
+function idField(data) {
+    if (data && data.id) {
+        return(<UU5.Forms.Text
+            name="id"
+            label="id"
+            placeholder="id"
+            required
+            value={data && data.id}
+            readOnly={true}
+        />)
+    }else{
+        return(<div/>)
+    }
+
+}
 
 export default CommentUpdateForm;

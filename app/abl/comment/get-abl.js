@@ -6,7 +6,7 @@ let dao = new CommentDao(path.join(__dirname, "..", "..", "storage", "comments.j
 async function GetAbl(req, res) {
     let {id} = req.query;
     if (
-        id && typeof id === "string" && id.length < 25
+        id && typeof id === "string"
     ) {
         try {
             let result = await dao.getComment(id);

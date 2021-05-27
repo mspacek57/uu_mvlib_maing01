@@ -5,7 +5,7 @@ let dao = new CommentDao(path.join(__dirname, "..", "..", "storage", "comments.j
 async function DeleteAbl(req, res) {
     let {id} = req.body;
     if (
-        id && typeof id === "string" && id.length < 25
+        id && typeof id === "number" && id>0
     ) {
         try {
             await dao.deleteComment(id);

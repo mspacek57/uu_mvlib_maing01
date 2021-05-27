@@ -44,6 +44,7 @@ export const CommentList = createVisualComponent({
                 update: Calls.updateComment,
                 delete: Calls.deleteComment
             },
+            skipInitialLoad: true,
             initialDtoIn: { data: {} }
         });
         const videoListResult = useDataList({
@@ -157,14 +158,22 @@ export const CommentList = createVisualComponent({
                             colorSchema={"green"}
                             onClick={() => setSelectedCommentData({ data: {} })}
                         />
+                        <UU5.Bricks.Button disabled={!dataListResult.handlerMap.load} onClick={() => dataListResult.handlerMap.load({ video })}>
+                            <UU5.Bricks.Lsi lsi={{ en: "Reload Comments", cs: "Aktualizovat komentáře" }} />
+                        </UU5.Bricks.Button>{" "}
                     </div>
                     {getChild()}
                 </div>
             );
         } else {
             return (
-                <div {...attrs} >
-
+                <div {...attrs} className={"uu5-common-padding-s"}>
+                    <UU5.Bricks.Header content={<UU5.Bricks.Lsi lsi={{ en: "Comments", cs: "Komentáře" }} />} level={3} />
+                    <div className={"left"}>
+                    <UU5.Bricks.Button disabled={!dataListResult.handlerMap.load} onClick={() => dataListResult.handlerMap.load( {video} )}>
+                        <UU5.Bricks.Lsi lsi={{ en: "Load Comments", cs: "Načíst komentáře" }} />
+                    </UU5.Bricks.Button>{" "}
+                    </div>                   
                 </div>
             );
         }

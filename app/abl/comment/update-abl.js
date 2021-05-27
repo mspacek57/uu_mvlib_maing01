@@ -8,7 +8,7 @@ async function UpdateAbl(req, res) {
     let { id, text, video } = req.body;
     if (
         typeof text === "string" && text.length < 1000 &&
-        id && typeof id === "string" && id.length < 25
+        id && typeof id === "number" && id>0
     ) {
         if (video) {
             try {

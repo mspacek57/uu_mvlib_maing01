@@ -5,9 +5,21 @@ let dao = new GenreDao(path.join(__dirname, "..", "..", "storage", "genres.json"
 async function CreateAbl(req, res) {
     let {id, name} = req.body;
     if (
-        name && typeof name === "string" && name.length < 200 &&
-        id && typeof id === "string" && id.length < 25
+        name && typeof name === "string" && name.length < 200
     ) {
+        id = 1;
+        while(true){
+            try {
+                await dao.getGenre(id)
+            } catch (e) {
+                if (e.code === "FAILED_TO_GET_GENRE") {
+                    break;
+                } else {
+                    res.status(500).json({ error: e })
+                }
+            }
+            id++;
+        }
         const genre = {id, name};
         try {
             let result = await dao.addGenre(genre);

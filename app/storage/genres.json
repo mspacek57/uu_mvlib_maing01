@@ -1,22 +1,38 @@
 {
+  "1": {
+    "id": 1,
+    "name": "test1"
+  },
+  "2": {
+    "id": 2,
+    "name": "test"
+  },
   "3": {
-    "id": "3",
+    "id": 3,
     "name": "Mamka"
   },
   "4": {
-    "id": "4",
+    "id": 4,
     "name": "ukolebavky"
   },
   "5": {
-    "id": "5",
+    "id": 5,
     "name": "paprikaž"
   },
-  "rck": {
-    "id": "rck",
+  "6": {
+    "id": 6,
+    "name": "test"
+  },
+  "7": {
+    "id": 7,
+    "name": "test3"
+  },
+  "8": {
+    "id": 8,
     "name": "Rock"
   },
-  "sadss": {
-    "id": "sadss",
+  "9": {
+    "id": 9,
     "name": "gjczh"
   }
 }

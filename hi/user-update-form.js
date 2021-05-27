@@ -70,14 +70,8 @@ export const UserUpdateForm = createVisualComponent({
                     labelColWidth={"xs-12 s-12 m4 l4 xl4"}
                     inputColWidth={"xs-12 s-12 m6 l6 xl6"}
                 >
-                    <UU5.Forms.Text
-                        name="id"
-                        label="id"
-                        placeholder="id"
-                        required
-                        value={selectedUserData && selectedUserData.id}
-                        readOnly={selectedUserData && selectedUserData.id}
-                    />
+                    {idField(selectedUserData)}
+
                     <UU5.Forms.Text
                         name="username"
                         label={<UU5.Bricks.Lsi lsi={{en: "Username", cs: "Uživatelské jméno"}}/>}
@@ -101,5 +95,21 @@ export const UserUpdateForm = createVisualComponent({
         //@@viewOff:render
     },
 });
+
+function idField(data) {
+    if (data && data.id) {
+        return(<UU5.Forms.Text
+            name="id"
+            label="id"
+            placeholder="id"
+            required
+            value={data && data.id}
+            readOnly={true}
+        />)
+    }else{
+        return(<div/>)
+    }
+
+}
 
 export default UserUpdateForm;

@@ -5,10 +5,22 @@ let dao = new UserDao(path.join(__dirname, "..", "..", "storage", "users.json"))
 async function CreateAbl(req, res) {
     let {id, username, password} = req.body;
     if (
-        id && typeof id === "string" && id.length < 25 &&
         username && typeof username === "string" && username.length < 50 &&
         password && typeof password === "string" && password.length < 50
     ) {
+        id = 1;
+        while(true){
+            try {
+                await dao.getUser(id)
+            } catch (e) {
+                if (e.code === "FAILED_TO_GET_USER") {
+                    break;
+                } else {
+                    res.status(500).json({ error: e })
+                }
+            }
+            id++;
+        }
         const user = {id, username, password};
         try {
             let result = await dao.addUser(user);

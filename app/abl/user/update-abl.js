@@ -5,7 +5,7 @@ let dao = new UserDao(path.join(__dirname, "..", "..", "storage", "users.json"))
 async function UpdateAbl(req, res) {
     let {id, username, password} = req.body;
     if (
-        id && typeof id === "string" && id.length < 25 &&
+        id && typeof id === "number" && id>0 &&
         username && typeof username === "string" && username.length < 50 &&
         password && typeof password === "string" && password.length < 50
     ) {

@@ -5,7 +5,7 @@ let dao = new GenreDao(path.join(__dirname, "..", "..", "storage", "genres.json"
 async function DeleteAbl(req, res) {
     let {id} = req.body;
     if (
-        id && typeof id === "string" && id.length < 25
+        id && typeof id === "number" && id>0
     ) {
         try {
             await dao.deleteGenre(id);

@@ -7,9 +7,21 @@ let videoDao = new VideoDao(path.join(__dirname, "..", "..", "storage", "videos.
 async function CreateAbl(req, res) {
     let { id, text, video } = req.body;
     if (
-        typeof text === "string" && text.length < 1000 &&
-        id && typeof id === "string" && id.length < 25
+        typeof text === "string" && text.length < 1000
     ) {
+        id = 1;
+        while(true){
+            try {
+                await dao.getComment(id)
+            } catch (e) {
+                if (e.code === "FAILED_TO_GET_COMMENT") {
+                    break;
+                } else {
+                    res.status(500).json({ error: e })
+                }
+            }
+            id++;
+        }
         if (video) {
             try {
                 await videoDao.getVideo(video)

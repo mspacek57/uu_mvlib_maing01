@@ -83,7 +83,7 @@ class CommentDao {
         const comments = await this._loadAllComments();
         let commentList = [];
         for (let id in comments) {
-            if (!video || comments[id].video.toLowerCase().includes(video.toLowerCase())) {
+            if (!video || comments[id].video == video.video) {
                 commentList.push(comments[id]);
             }
         }

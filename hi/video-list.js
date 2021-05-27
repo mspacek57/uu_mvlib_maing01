@@ -94,7 +94,7 @@ export const VideoList = createVisualComponent({
                                 bgStyle={"transparent"}
                             />
                             <UU5.Bricks.Button
-                                content={<UU5.Bricks.Icon icon={"mdi-book-open"} />}
+                                content={<UU5.Bricks.Icon icon={"mdi-pencil"} />}
                                 colorSchema={"blue"}
                                 bgStyle={"transparent"}
                                 onClick={() => setSelectedVideoData(cellProps.data)}

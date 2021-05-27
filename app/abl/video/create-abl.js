@@ -7,7 +7,6 @@ let genreDao = new GenreDao(path.join(__dirname, "..", "..", "storage", "genres.
 async function CreateAbl(req, res) {
     let { id, title, artist, album, year, description, link, isRestricted, genre } = req.body;
     if (
-        id && typeof id === "string" && id.length < 25 &&
         title && typeof title === "string" && title.length < 200 &&
         artist && typeof artist === "string" && artist.length < 200 &&
         typeof album === "string" && album.length < 200 &&
@@ -16,6 +15,19 @@ async function CreateAbl(req, res) {
         link && typeof link === "string" && link.length < 200 &&
         typeof isRestricted === "boolean"
     ) {
+        id = 1;
+        while(true){
+            try {
+                await dao.getVideo(id)
+            } catch (e) {
+                if (e.code === "FAILED_TO_GET_VIDEO") {
+                    break;
+                } else {
+                    res.status(500).json({ error: e })
+                }
+            }
+            id++;
+        }
         if (genre) {
             try {
                 await genreDao.getGenre(genre)

@@ -5,7 +5,7 @@ let dao = new CommentDao(path.join(__dirname, "..", "..", "storage", "comments.j
 async function ListAbl(req, res) {
     let {video} = req.body;
     if (
-        !video || (video && typeof video === "string" && video.length < 25)
+        !video || (video && typeof video.video === "number" && video.video>0)
     ) {
         try {
             let commentList = await dao.listComments(video);
