@@ -34,6 +34,7 @@ export const CommentList = createVisualComponent({
     //@@viewOff:defaultProps
 
     render({ video }) {
+        console.log(video + " pomocný výpis");
         //@@viewOn:private
         const dataListResult = useDataList({
             handlerMap: {
@@ -45,7 +46,7 @@ export const CommentList = createVisualComponent({
                 delete: Calls.deleteComment
             },
             skipInitialLoad: true,
-            initialDtoIn: { data: {} }
+            initialDtoIn: { data: {} } // pridat video
         });
         const videoListResult = useDataList({
             handlerMap: {
@@ -54,23 +55,21 @@ export const CommentList = createVisualComponent({
             initialDtoIn: { data: {} }
         });
 
-
         let videoList = [];
         videoListResult.data && videoListResult.data.forEach(video => {
             videoList.push(video.data)
         });
-
-
 
         const [selectedCommentData, setSelectedCommentData] = useState(null);
 
         const columns = [
             {
                 cell: cellProps => {
-                    let video = videoList.find(item => item.id == cellProps.data.data.video);
 
-                    if(video.id == cellProps.data.data.video)
-                    {                         
+                    if(video == cellProps.data.data.video)
+                    {    
+                        console.log(video.id + "  je vidoe id")   
+                        console.log(cellProps.data.data.video + "  je to druhy")                    
                         return cellProps.data.data.id+" <!>"  
                     }else
                     return cellProps.data.data.id
