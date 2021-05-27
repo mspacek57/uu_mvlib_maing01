@@ -51,6 +51,25 @@ export const CommentUpdateForm = createVisualComponent({
 
         })
 
+        const userListResult = useDataList({
+            handlerMap: {
+                load: Calls.listUser,
+            },
+            initialDtoIn: { data: {} }
+        });
+
+        let userList = [];
+        userListResult.data && userListResult.data.forEach(user => {
+            userList.push(
+                <UU5.Forms.Select.Option
+                    key={user.data.id+""}
+                    value={user.data.id+""}
+                    content={user.data.username}
+                />
+            )
+
+        })
+
 
         function onSave(opt) {
             if (props.selectedCommentData && props.selectedCommentData.data && props.selectedCommentData.data.id) {
@@ -99,6 +118,13 @@ export const CommentUpdateForm = createVisualComponent({
                         value={selectedCommentData && selectedCommentData.video}
                     >
                         {videoList}
+                    </UU5.Forms.Select>
+                    <UU5.Forms.Select
+                        name="user"
+                        label={<UU5.Bricks.Lsi lsi={{en: "User", cs: "Uživatel"}}/>}
+                        value={selectedCommentData && selectedCommentData.video}
+                    >
+                        {userList}
                     </UU5.Forms.Select>
                     <UU5.Bricks.Line size={"s"} />
                     <UU5.Forms.Controls />
